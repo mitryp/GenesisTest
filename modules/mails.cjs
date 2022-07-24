@@ -42,9 +42,6 @@ const mailSubject = process.env.MAIL_SUBJECT || 'BTC rate change notification';
  */
 const mailContent = process.env.MAIL_CONTENT || `Current BTC to UAH rate is ${ratePlaceholder}UAH.`;
 
-console.log(pass);
-console.log(service);
-
 
 /**
  * Sends the notification email to the 'target' email.
