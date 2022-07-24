@@ -2,7 +2,6 @@ const nodemailer = require('nodemailer');
 
 
 // The following constants will be used to connect to the mail service
-
 /**
  * Mail service username (probably, email).
  * Should be provided in order to connect to the mail service.
