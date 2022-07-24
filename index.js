@@ -56,8 +56,9 @@ app.post('/subscribe', async (request, response) => {
     const email = request.body.email;
     if (!email) {
         response.status(400).send({ 'error': 'Не надано email для підписки' });
+        return;
     }
-    const res = subscribe(email);
+    const res = await subscribe(email);
     if (res) {
         response.status(200).send({ 'description': 'Email додано' });
     } else {
