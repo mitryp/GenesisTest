@@ -20,7 +20,7 @@ const pass = process.env.MAIL_PASS;
  * Should be provided in order to connect to the mail service.
  * If not provided, the 'gmail' service will be used.
  */
-const service = process.env.MAIL_SERIVICE || 'gmail';
+const service = process.env.MAIL_SERVICE || 'gmail';
 
 
 // The following constants are the letter settings
