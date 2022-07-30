@@ -5,6 +5,8 @@ import express from 'express';
 
 const app = express();
 
+const pathBase = '/api';
+
 /**
  * A port that the app will run on.
  * Default value is 8080.
@@ -31,7 +33,7 @@ app.listen(
 )
 
 // GET /rate operation handler -- returns the BTC to UAH rate in the response body
-app.get('/rate', async (request, response) => {
+app.get(`${pathBase}/rate`, async (request, response) => {
     console.log(`${request.ip} GET /rate`);
     try {
         const rate = await getBTCToUAHRate();
@@ -43,7 +45,7 @@ app.get('/rate', async (request, response) => {
 
 // POST /sendEmails operation handler -- makes the API send the current BTC to UAH rate 
 // to the subscribed emails
-app.post('/sendEmails', async (request, response) => {
+app.post(`${pathBase}/sendEmails`, async (request, response) => {
     console.log(`${request.ip} POST /sendEmails`);
     notifySubscriptions(await getBTCToUAHRate());
     response.status(200).send({ 'description': 'E-mailʼи відправлено' });
@@ -51,7 +53,7 @@ app.post('/sendEmails', async (request, response) => {
 
 // POST{email} /subscribe operation handler -- subscribes an email provided in the 'email' field
 // of the formData to the BTC rate change notifications
-app.post('/subscribe', async (request, response) => {
+app.post(`${pathBase}/subscribe`, async (request, response) => {
     console.log(`${request.ip} POST /subscribe`);
     const email = request.body.email;
     if (!email) {
