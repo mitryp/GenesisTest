@@ -6,6 +6,9 @@ Author: [*Dmytro Popov*](https://github.com/mitryp)
 Language: *JavaScript/Node.js*
 
 ### API Endpoints
+API base path: /api/{endpoint}
+
+#### Endpoints
 * `/rate` -- accepts GET requests. Returns the current Bitcoin to UAH exchange rate in the response body.
 * `/subscribe` -- accepts POST requests with a formData that contains the `email` field. Allows to subscribe to the 
 rate change notifications. If the given email is not subscribed yet, subscribes it to the subscription. Otherwise, 
