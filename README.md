@@ -9,11 +9,11 @@ Language: *JavaScript/Node.js*
 API base path: `/api/{endpoint}`
 
 #### Endpoints
-* `/rate` -- accepts GET requests. Returns the current Bitcoin to UAH exchange rate in the response body.
-* `/subscribe` -- accepts POST requests with a formData that contains the `email` field. Allows to subscribe to the 
+* `rate` -- accepts GET requests. Returns the current Bitcoin to UAH exchange rate in the response body.
+* `subscribe` -- accepts POST requests with a formData that contains the `email` field. Allows to subscribe to the 
 rate change notifications. If the given email is not subscribed yet, subscribes it to the subscription. Otherwise, 
 returns 409 status code. The subscribers will be notified by email when the rate changes depending on the service settings.
-* `/sendEmails` -- accepts POST requests. The request causes the service to immediately notify the subscribers
+* `sendEmails` -- accepts POST requests. The request causes the service to immediately notify the subscribers
 with the current BTC to UAH rate.
 
 ### Settings
