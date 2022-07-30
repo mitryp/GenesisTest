@@ -6,7 +6,7 @@ Author: [*Dmytro Popov*](https://github.com/mitryp)
 Language: *JavaScript/Node.js*
 
 ### API Endpoints
-API base path: /api/{endpoint}
+API base path: `/api/{endpoint}`
 
 #### Endpoints
 * `/rate` -- accepts GET requests. Returns the current Bitcoin to UAH exchange rate in the response body.
